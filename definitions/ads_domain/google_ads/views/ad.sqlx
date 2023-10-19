@@ -31,6 +31,7 @@ js {
 }
 SELECT DISTINCT
   "GOOGLE_ADS" AS ad_system,
+  ${dataform.projectConfig.vars.logical_date} AS ingestion_date,
   CAST(ad_group_ad_ad_id AS STRING) AS creative_id,
   SPLIT(ad_group_ad_ad_group,'/')[ORDINAL(4)] AS adgroup_id, --extract ad_group_id from ad_group string
   CAST(customer_id AS STRING) AS account_id,
